@@ -1,0 +1,80 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w">
+            <div class="text-2xl font-bold mb-2">Add Route</div>
+            <form class="flex flex-col mt-8 p-8 pb-4 bg-card rounded-2xl shadow overflow-hidden">
+                <div class="flex flex-row mb-4">
+                    <!-- Route Name Input -->
+                    <div class="flex-auto pr-3">
+                        <div><label for="routeName">Route Name</label></div>
+                        <mat-form-field class="w-full">
+                            <input matInput [placeholder]="'Route Name'" id="routeName" />
+                            <!-- You can add matSuffix icons if needed -->
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Start Station Select -->
+                    <div class="flex-auto pr-3">
+                        <div><label for="startStation">Start Station</label></div>
+                        <mat-form-field class="w-full">
+                            <mat-select [placeholder]="'Start Station'" id="startStation">
+                                <!-- Add your options here -->
+                            </mat-select>
+                            <!-- You can add matSuffix icons if needed -->
+                        </mat-form-field>
+                    </div>
+
+                    <!-- End Station Select -->
+                    <div class="flex-auto">
+                        <div><label for="endStation">End Station</label></div>
+                        <mat-form-field class="w-full">
+                            <mat-select [placeholder]="'End Station'" id="endStation">
+                                <!-- Add your options here -->
+                            </mat-select>
+                            <!-- You can add matSuffix icons if needed -->
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="flex flex-row mb-4">
+                    <!-- Select Stations Select -->
+                    <div class="flex-auto pr-3">
+                        <div><label for="selectStations">Select Stations</label></div>
+                        <mat-form-field class="w-full">
+                            <mat-select [placeholder]="'Select Stations'" id="selectStations">
+                                <!-- Add your options here -->
+                            </mat-select>
+                            <!-- You can add matSuffix icons if needed -->
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Total Distance Input -->
+                    <div class="flex-auto pr-3">
+                        <div><label for="totalDistance">Total Distance</label></div>
+                        <mat-form-field class="w-full">
+                            <input matInput [placeholder]="'Total Distance'" id="totalDistance" />
+                            <!-- You can add matSuffix icons if needed -->
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Status Select -->
+                    <div class="flex-auto">
+                        <div><label for="status">Status</label></div>
+                        <mat-form-field class="w-full">
+                            <mat-select [placeholder]="'Status'" id="status">
+                                <mat-option value="active">Active</mat-option>
+                                <mat-option value="inactive">Inactive</mat-option>
+                            </mat-select>
+                            <!-- You can add matSuffix icons if needed -->
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="text-2xl font-bold mb-2">Stops</div>
+                <div class="flex flex-row justify-start">
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                    <button mat-button color="warn" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

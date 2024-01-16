@@ -1,0 +1,84 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w">
+            <div class="text-2xl font-bold mb-2">Performance Report</div>
+            <!-- Start Date, End Date, and Search Button -->
+            <div class="flex items-center justify-between mb-4">
+                <!-- Start Date Picker -->
+                <div class="status-filter-container">
+                    <div>Start Date</div>
+                    <mat-form-field class="mr-4 status-filter">
+                        <input
+                            matInput
+                            [matDatepicker]="startDatePicker"
+                            placeholder="Choose a date"
+                        />
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="startDatePicker"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #startDatePicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <!-- End Date Picker -->
+                <div class="status-filter-container">
+                    <div>End Date</div>
+                    <mat-form-field class="mr-4 status-filter">
+                        <input
+                            matInput
+                            [matDatepicker]="endDatePicker"
+                            placeholder="Choose a date"
+                        />
+                        <mat-datepicker-toggle
+                            matSuffix
+                            [for]="endDatePicker"
+                        ></mat-datepicker-toggle>
+                        <mat-datepicker #endDatePicker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+                <!-- Search Button -->
+                <button mat-raised-button color="primary">Search</button>
+            </div>
+            
+            <!-- Display Charts Side by Side with Equal Dimensions -->
+            <div class="flex">
+                <div class="flex-auto pr-2" style="width: 50%; height: 400px;">
+                    <div id="chart1">
+                        <!-- First Chart Component -->
+                        <apx-chart
+                            [series]="chartOptions.series"
+                            [chart]="chartOptions.chart"
+                            [dataLabels]="chartOptions.dataLabels"
+                            [plotOptions]="chartOptions.plotOptions"
+                            [yaxis]="chartOptions.yaxis"
+                            [legend]="chartOptions.legend"
+                            [fill]="chartOptions.fill"
+                            [stroke]="chartOptions.stroke"
+                            [tooltip]="chartOptions.tooltip"
+                            [xaxis]="chartOptions.xaxis"
+                        ></apx-chart>
+                    </div>
+                </div>
+                <div class="flex-auto pl-2" style="width: 50%; height: 400px;">
+                    <div id="chart2">
+                        <!-- Second Chart Component -->
+                        <apx-chart
+                            [series]="chartOptions2.series"
+                            [chart]="chartOptions2.chart"
+                            [dataLabels]="chartOptions2.dataLabels"
+                            [plotOptions]="chartOptions2.plotOptions"
+                            [yaxis]="chartOptions2.yaxis"
+                            [legend]="chartOptions2.legend"
+                            [fill]="chartOptions2.fill"
+                            [stroke]="chartOptions2.stroke"
+                            [tooltip]="chartOptions2.tooltip"
+                            [xaxis]="chartOptions2.xaxis"
+                        ></apx-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

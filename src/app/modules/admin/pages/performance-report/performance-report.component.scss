@@ -1,0 +1,30 @@
+performance-report{
+   #chart {
+      max-width: 650px;
+      margin: 35px auto;
+    }
+    
+    .mat-mdc-paginator .mat-mdc-paginator-container .mat-mdc-paginator-range-actions {
+       display:none !important;    }
+    .mat-mdc-paginator-page-size-label{
+      display: none !important;
+       }
+       .mat-mdc-paginator .mat-mdc-paginator-container {
+        padding: 0px !important;
+        border-radius: 5px !important;
+       }
+       .status-filter {
+         width: 100%; /* Use 100% to fill the container width */
+     }     
+     .search-container {
+      width: 300px; /* Adjust the width as needed */
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .search-field {
+      width: 100%; /* Use 100% to fill the container width */
+  } 
+      
+}
+

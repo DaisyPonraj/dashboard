@@ -1,0 +1,87 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w">
+            <div class="text-2xl font-bold mb-2">Add Station</div>
+
+            <form
+                class="flex flex-col mt-8 p-8 pb-4 bg-card rounded-2xl shadow overflow-hidden"
+            >
+                <div class="flex flex-row mb-4">
+                    <!-- Station/Stop Name Input -->
+                    <div class="flex-auto pr-3">
+                        <div>
+                            <label for="stationName">Station/Stop Name</label>
+                        </div>
+                        <mat-form-field class="w-full">
+                            <input
+                                matInput
+                                [placeholder]="'Station/Stop Name'"
+                                id="stationName"
+                            />
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Address (Google Autosearch) Input -->
+                    <div class="flex-auto pr-3">
+                        <div>
+                            <label for="address"
+                                >Address (Google Autosearch)</label
+                            >
+                        </div>
+                        <mat-form-field class="w-full">
+                            <input
+                                matInput
+                                [placeholder]="'Address (Google Autosearch)'"
+                                id="address"
+                            />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="flex flex-row mb-4">
+                    <!-- Type Radio Buttons -->
+                    <div class="flex-auto pr-3">
+                        <div><label>Type</label></div>
+                        <div class="items-center">
+                            <mat-radio-group>
+                                <mat-radio-button value="station"
+                                    >Station</mat-radio-button
+                                >
+                                <mat-radio-button value="stop"
+                                    >Stop</mat-radio-button
+                                >
+                            </mat-radio-group>
+                        </div>
+                    </div>
+
+                    <!-- Status Select -->
+                    <div class="flex-auto pr-3">
+                        <div><label for="status">Status</label></div>
+                        <mat-form-field class="w-full">
+                            <mat-select [placeholder]="'Status'" id="status">
+                                <mat-option value="active">Active</mat-option>
+                                <mat-option value="inactive"
+                                    >Inactive</mat-option
+                                >
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Buttons Section -->
+                    <div class="flex flex-row items-center">
+                        <button mat-raised-button color="primary" type="submit">
+                            Submit
+                        </button>
+                        <button mat-button color="warn" type="button">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <!-- <google-map width="100%" height="400px"></google-map> -->
+                    <div id="map" style="height: 400px"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

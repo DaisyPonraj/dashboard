@@ -1,0 +1,58 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w">
+            <form class="flex flex-col mt-8 p-8 pb-4 bg-card rounded-2xl shadow overflow-hidden">
+                <div class="flex flex-col sm:flex-row">
+                    <mat-form-field class="flex-auto sm:pr-3">
+                        <mat-label>First name</mat-label>
+                        <input matInput />
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="flex-auto sm:pl-3">
+                        <mat-label>Last name</mat-label>
+                        <input matInput />
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:user-circle'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex flex-col md:flex-row">
+                    <mat-form-field class="flex-auto md:pr-3">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput />
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:phone'"></mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="flex-auto md:pl-3">
+                        <mat-label>Email</mat-label>
+                        <input matInput />
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:mail'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex flex-col md:flex-row">
+                    <mat-form-field class="flex-auto md:pr-3">
+                        <mat-label>Account Status</mat-label>
+                        <mat-select>
+                            <mat-option value="active">Active</mat-option>
+                            <mat-option value="inactive">Inactive</mat-option>
+                        </mat-select>
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:status-online'"></mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field class="flex-auto">
+                        <mat-label>Address</mat-label>
+                        <input matInput />
+                        <mat-icon class="icon-size-5" matSuffix [svgIcon]="'heroicons_solid:3-marker'"></mat-icon>
+                    </mat-form-field>
+                </div>
+
+                <div class="flex flex-row justify-start mt-4">
+                    <button mat-raised-button color="primary" type="submit">Submit</button>
+                    <button mat-button color="warn" type="button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

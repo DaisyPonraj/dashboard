@@ -1,0 +1,114 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="max-w">
+            <div class="text-2xl font-bold mb-2">Route List</div>
+            <div class="flex justify-between items-center mb-0">
+                <!-- Add Route Button with extra space on the right -->
+                <div class="mr-18">
+                    <button
+                        class="rounded-md"
+                        mat-raised-button
+                        color="primary"
+                        matTooltip="Add Route"
+                        (click)="redirectToAddRoute()"
+                    >
+                    <mat-icon
+                            [svgIcon]="'heroicons_outline:plus'"
+                        ></mat-icon>
+                        <span>Add Route</span>
+                        
+                    </button>
+                </div>
+
+                <!-- Status Select with increased space -->
+                <div class="flex-shrink-0 status-filter-container">
+                    <div>Status Filter</div>
+                    <mat-form-field class="status-filter">
+                        <mat-select [placeholder]="'Status Filter'">
+                            <mat-option value="active">Active</mat-option>
+                            <mat-option value="inactive">Inactive</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <!-- StartStation Select with increased space -->
+                <div class="flex-shrink-0 status-filter-container">
+                    <div>Start Station</div>
+                    <mat-form-field class="status-filter">
+                        <mat-select [placeholder]="'Start Station Filter'">
+                            <mat-option value="station1">Station 1</mat-option>
+                            <mat-option value="station2">Station 2</mat-option>
+                            <!-- Add other start station options as needed -->
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <!-- EndStation Select -->
+                <div class="flex-shrink-0 status-filter-container">
+                    <div>End Station</div>
+                    <mat-form-field class="status-filter">
+                        <mat-select [placeholder]="'End Station Filter'">
+                            <mat-option value="stationA">Station A</mat-option>
+                            <mat-option value="stationB">Station B</mat-option>
+                            <!-- Add other end station options as needed -->
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <mat-paginator
+                        [pageSizeOptions]="[5, 10, 20]"
+                        length="dataSource.data.length"
+                    ></mat-paginator>
+                    <mat-label>records</mat-label>
+                </div>
+                <div class="flex items-center">
+                    <div class="mr-2">Search:</div>
+                    <div class="flex items-center search-container">
+                        <mat-form-field class="flex pt-5 search-field">
+                            <input matInput placeholder="search here" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="mat-elevation-z8 mt-1">
+                <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+                    </ng-container>
+            
+                    <!-- Start Station Column with Sorting -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">Start Station</th>
+                        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+                    </ng-container>
+            
+                    <!-- End Station Column -->
+                    <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef>End Station</th>
+                        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+                    </ng-container>
+            
+                    <!-- Status Column with Sorting -->
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header="status">Status</th>
+                        <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+                    </ng-container>
+            
+                    <!-- Actions Column -->
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef>Actions</th>
+                        <td mat-cell *matCellDef="let element">{{ element.actions }}</td>
+                    </ng-container>
+            
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
